@@ -1,0 +1,34 @@
+<!-- Navigation -->
+<nav *ngIf="currentUrl != '/login'" class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="http://placehold.it/150x50?text=Logo" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li [ngClass]="{ 'nav-item' : true, 'active' : (currentUrl == '/home' || currentUrl == '/') }" joyrideStep="home"
+          title="Home Details" text="Home page details and introduction.">
+          <a class="nav-link" routerLink="/home">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li [ngClass]="{ 'nav-item' : true, 'active' : currentUrl == '/about-us' }" joyrideStep="about" title="About us"
+          text="About the website!">
+          <a class="nav-link" routerLink="about-us">About</a>
+        </li>
+        <li [ngClass]="{ 'nav-item' : true, 'active' : currentUrl == '/services' }" joyrideStep="services" title="Services"
+          text="Services details provided by web application or product.">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li [ngClass]="{ 'nav-item' : true, 'active' : currentUrl == '/login' }" joyrideStep="logout" title="Logout"
+          text="Logout from current session.">
+          <a class="nav-link" routerLink="/login">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
